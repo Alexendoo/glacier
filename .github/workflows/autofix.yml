@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 10
 
       - name: Configure Git
         run: |
@@ -26,6 +26,6 @@ jobs:
           rustup set profile minimal
           rustup toolchain install nightly
 
-      - run: cargo run -p autofix; git log --oneline
+      - run: cargo run -p autofix
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
