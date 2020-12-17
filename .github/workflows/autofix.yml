@@ -17,6 +17,7 @@ jobs:
         run: |
           git config --global user.name "rustbot"
           git config --global user.email "rustbot@users.noreply.github.com"
+          git log --oneline
 
       - name: Configure rustup
         run: |
