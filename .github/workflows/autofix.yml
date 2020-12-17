@@ -1,13 +1,11 @@
 name: Autofix
 
-on:
-  schedule:
-    - cron: "0 12 * * *"
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.repository == 'rust-lang/glacier'
+    # if: github.repository == 'rust-lang/glacier'
 
     env:
       RUST_LIB_BACKTRACE: 1
